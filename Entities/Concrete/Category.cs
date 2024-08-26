@@ -1,4 +1,4 @@
-﻿using Entities.Abstract;
+﻿using Core.Entities; //Abstract klasörü yerine Core klasörüne taşıdık : IEntity
 using System;
 using System.Collections.Generic;
 using System.Linq;

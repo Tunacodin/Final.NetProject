@@ -14,7 +14,8 @@ namespace DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=LAPTOP-0I24A1AJ\SQLEXPRESS;Database=Northwind;Trusted_Connection=true;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer(
+                @"Server=LAPTOP-0I24A1AJ\SQLEXPRESS;Database=Northwind;Trusted_Connection=true;TrustServerCertificate=True;");
 
         }
 
