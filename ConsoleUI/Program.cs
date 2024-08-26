@@ -14,6 +14,7 @@ namespace ConsoleUI
             //Veri deposunu mağaza müdürü kullanır
             ProductManager productManager = new ProductManager(memoryProductDal);
 
+
             foreach(var product in productManager.GetAll())
             {
                 Console.WriteLine(product.ProductName);
