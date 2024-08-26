@@ -1,6 +1,7 @@
 ﻿
 using Business.Concrete;
 using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.Memory;
 
 namespace ConsoleUI
@@ -9,17 +10,25 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            //Veri deposu sağlanır
-            MemoryProductDal memoryProductDal = new MemoryProductDal();
-            //Veri deposunu mağaza müdürü kullanır
-            ProductManager productManager = new ProductManager(memoryProductDal);
+            //Veri deposu sağlanır memoryDal bizim ürettiğimi local bir veri kaynağı
+            // MemoryProductDal memoryProductDal = new MemoryProductDal();
+            // ProductManager productManager = new ProductManager(memoryProductDal);
 
+            //Veri deposu sağlanır EntityCategoryDal dinamik bir veritabanı
 
-            foreach(var product in productManager.GetAll())
+           
+            EfProductDal efProductDal = new EfProductDal();
+            ProductManager productManager = new ProductManager(efProductDal);
+
+            foreach (var product in productManager.GetAll())
             {
-                Console.WriteLine(product.ProductName);
+                Console.WriteLine(product.UnitPrice);
             }
 
+
+
+
+        
         }
     }
 }
