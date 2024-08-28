@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace Core.Utilities.Results
 {
-    internal class ErrorResult
+    public class ErrorResult:Result
     {
+        //base() :Result demektir
+        public ErrorResult(string message) : base(false, message)
+        {
+
+        }
+
+        public ErrorResult() : base(false)
+        {
+
+        }
     }
 }

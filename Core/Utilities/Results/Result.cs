@@ -11,6 +11,8 @@ namespace Core.Utilities.Results
       
         //constructor sayesinde set işlemi yapabildik ve set; kullanmadık
 
+        // İlk constructor ın amacı hem message hem de success bilgisini döndürmektir, success için this.success ile 2. constructor ı çağırır. Busayede 2 constructor da çalışmış olur
+
         public Result(bool success, string message):this(success)
         {
             Message = message;
@@ -18,6 +20,7 @@ namespace Core.Utilities.Results
         }
 
         //overloading
+        // 2. Cconstructor sadece success bilgisi döndürür , message bilgisi verilmediği durumda bu construcor çalışır
         public Result(bool success)
         {
             
