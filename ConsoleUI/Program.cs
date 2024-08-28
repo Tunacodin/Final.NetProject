@@ -18,28 +18,43 @@ namespace ConsoleUI
 
             //Veri deposu sağlanır EntityCategoryDal dinamik bir veritabanı
 
+
+            CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+
+            foreach(var category in categoryManager.GetAll())
+            {
+                Console.WriteLine(category.CategoryName);
+            }
+
+            //ProductManager productManager = ProductTest();
+            //foreach (var product in productManager.GetAllByCategoryId(5))
+            //{
+            //    Console.WriteLine("Category Id 5: " + product.ProductName);
+            //}
+
+            //foreach (var product in productManager.GetAllByCategoryId(2))
+            //{
+            //    Console.WriteLine(product.CategoryId);
+            //}
+
            
-            EfProductDal efProductDal = new EfProductDal();
-            ProductManager productManager = new ProductManager(efProductDal);
-
-            foreach (var product in productManager.GetByUnitPrice(100,200))
-            { 
-                Console.WriteLine("Ürün fiyatı: " + product.UnitPrice + " Ürün Adı:" + product.ProductName);
-               
-            }
-            foreach(var product in productManager.GetAllByCategoryId(5))
-            {
-                Console.WriteLine("Category Id 5: " + product.ProductName);
-            }
-
-            foreach(var product in productManager.GetAllByCategoryId(2))
-            {
-                Console.WriteLine(product.CategoryId);
-            }
 
 
 
-        
         }
+
+        //private static ProductManager ProductTest()
+        //{
+        //    EfProductDal efProductDal = new EfProductDal();
+        //    ProductManager productManager = new ProductManager(efProductDal);
+
+        //    foreach (var product in productManager.GetByUnitPrice(100, 200))
+        //    {
+        //        Console.WriteLine("Ürün fiyatı: " + product.UnitPrice + " Ürün Adı:" + product.ProductName);
+
+        //    }
+
+        //    return productManager;
+        //}
     }
 }

@@ -24,6 +24,7 @@ namespace DataAccess.Abstract
         //List<Product> GetAllByCategory(int CategoryId);
 
         //Yukarıdaki kodlara gerek kalmadı IEntityRepository oluşturduk fakat IProductDal için öznel işlemler burada yapılabilir
+        
 
 
     }

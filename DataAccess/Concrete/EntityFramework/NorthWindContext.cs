@@ -6,6 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
+//Amacımız Entities de yer alan varlıklar ile veritabanı tablolarını eşlemek
 namespace DataAccess.Concrete.EntityFramework
 {
     //Context işlemi: Veritabanı tabloları ile bizim ürettiğimiz classları (Product,Customer,Category) bağlamak
@@ -25,5 +28,8 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Order> Orders { get; set; }
+
+
     }
 }
